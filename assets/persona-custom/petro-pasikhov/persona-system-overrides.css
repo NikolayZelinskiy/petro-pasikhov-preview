@@ -1,0 +1,665 @@
+/*
+  Persona system refresh
+  Scope: index-persona-system.html
+  Goal: keep the original Persona Education concept and copy, simplify the design,
+  and fix invisible Webflow animation fallbacks.
+*/
+
+:root {
+  --pe-purple: #4c0b31;
+  --pe-purple-dark: #390723;
+  --pe-green: #14c578;
+  --pe-green-dark: #0fa866;
+  --pe-mint: #e4f6e3;
+  --pe-cream: #fbf7ef;
+  --pe-ink: #18120f;
+  --pe-muted: #665a52;
+  --pe-line: rgba(48, 38, 30, .12);
+  --pe-shadow: 0 18px 44px rgba(39, 28, 22, .1);
+}
+
+html {
+  scroll-padding-top: 104px;
+}
+
+body {
+  background: var(--pe-mint);
+}
+
+.section.mat {
+  background-color: var(--pe-mint);
+}
+
+.wrapper,
+.navbar-wrapper {
+  max-width: 1380px;
+}
+
+.container-50px {
+  padding-top: 2.65em;
+  padding-bottom: 2.65em;
+}
+
+.navbar-second.mat {
+  background: rgba(228, 246, 227, .86);
+  border-bottom: 1px solid rgba(76, 11, 49, .08);
+  backdrop-filter: blur(18px);
+}
+
+.promotion_box {
+  background: var(--pe-purple);
+}
+
+.navbar-box-beige {
+  border: 1px solid rgba(76, 11, 49, .1);
+  box-shadow: 0 10px 28px rgba(48, 38, 30, .08);
+}
+
+.logo-link-wrapp {
+  min-width: 0;
+}
+
+.brand {
+  width: 150px;
+}
+
+.navmenu-list.second.mat {
+  gap: 22px;
+}
+
+.navlink-list-box {
+  gap: 20px;
+}
+
+.navlink-large {
+  color: #3d332d;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.12;
+}
+
+.navlink-large:hover,
+.navlink.phone:hover {
+  color: var(--pe-green-dark);
+}
+
+.navbar-button-secondary.mathematics,
+.primary-orange-button.mathematics,
+.trial-cta-button {
+  background-color: var(--pe-green);
+  border-color: var(--pe-green);
+  box-shadow: 0 12px 26px rgba(20, 197, 120, .22);
+}
+
+.navbar-button-secondary.mathematics:hover,
+.primary-orange-button.mathematics:hover,
+.trial-cta-button:hover {
+  background-color: var(--pe-green-dark);
+  border-color: var(--pe-green-dark);
+}
+
+.cta-desktop-wrapp {
+  gap: 18px;
+  flex: 0 0 auto;
+  margin-left: 18px;
+}
+
+.navlink.phone {
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.12;
+  margin-left: 8px;
+}
+
+.navbar-button-secondary {
+  padding-left: 1.55em;
+  padding-right: 1.55em;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple {
+  isolation: isolate;
+  min-height: min(720px, calc(100vh - 88px));
+  background:
+    linear-gradient(90deg, rgba(76, 11, 49, .98), rgba(76, 11, 49, .94)),
+    linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px);
+  background-size: auto, 42px 42px, 42px 42px;
+  border-radius: 28px;
+  padding: 4.1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple::before {
+  content: "Persona Education";
+  position: absolute;
+  right: 5%;
+  top: 8%;
+  z-index: -1;
+  color: rgba(255, 255, 255, .08);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: clamp(42px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple::after {
+  content: "f(x)=ax²+bx+c";
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
+  z-index: -1;
+  color: rgba(20, 197, 120, .18);
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 70px);
+  transform: rotate(-7deg);
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple[style*="opacity:0"],
+#methodology .advantage-im-card[style*="opacity:0"],
+#teacher [style*="opacity:0"],
+#price [style*="opacity:0"],
+#rewievs [style*="opacity:0"],
+#final-cta [style*="opacity:0"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+#teacher .width-620.center,
+#teacher .info-section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.h1-express,
+.h1-express.small {
+  letter-spacing: 0;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple .h1-express {
+  max-width: 820px;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple .benefit-item-box {
+  gap: 12px;
+}
+
+.hero-home-page.vstup26.fix-height.exp-purple .benefit-item {
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .08);
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+.vstup-26-form {
+  border: 1px solid rgba(76, 11, 49, .08);
+  border-radius: 24px;
+  box-shadow: 0 22px 56px rgba(26, 14, 12, .16);
+}
+
+.input.light-dark {
+  border: 1px solid rgba(48, 38, 30, .08);
+  border-radius: 999px;
+  background: #f7f4ef;
+}
+
+.input.light-dark:focus {
+  border-color: var(--pe-green);
+  box-shadow: 0 0 0 4px rgba(20, 197, 120, .14);
+}
+
+.form-note-wrapp {
+  max-width: 100%;
+}
+
+.checkbox-text,
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-text .checkbox,
+.checkbox-field .checkbox {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.checkbox-label {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+#methodology .width-770 {
+  width: 100%;
+  max-width: 1180px;
+}
+
+#methodology .namo-44px {
+  color: var(--pe-ink);
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(36px, 2.9vw, 42px);
+  line-height: 1.06;
+}
+
+#methodology .home-advantages-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#methodology .advantage-im-card {
+  border: 1px solid var(--pe-line);
+  border-radius: 18px;
+  background: #fff;
+  opacity: 1 !important;
+  transform: none !important;
+  box-shadow: 0 12px 28px rgba(43, 30, 25, .07);
+}
+
+#methodology .advantage-im {
+  height: 150px;
+}
+
+#methodology .advantage-im img {
+  object-position: center 18%;
+}
+
+#methodology .article-text-box {
+  padding: 18px;
+}
+
+#methodology .adv-title {
+  color: var(--pe-ink);
+  font-size: 21px;
+  line-height: 1.1;
+}
+
+#methodology ._1990-18px {
+  font-size: 15px;
+  line-height: 1.38;
+}
+
+#methodology .stroke-green {
+  color: var(--pe-green-dark);
+}
+
+#methodology .advent-card.green-baner.purple {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  min-height: 0;
+  height: auto;
+  padding: 26px 28px;
+}
+
+#methodology .advent-card.green-baner.purple .about-item-paragraph-box.center {
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+}
+
+#methodology .advent-card.green-baner.purple .namu-1960-24px.white.center {
+  max-width: 780px;
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.08;
+  text-align: left;
+}
+
+#methodology .advent-card.green-baner.purple ._1990-16px.white.center {
+  max-width: 520px;
+  text-align: left;
+}
+
+#methodology .advent-card.green-baner.purple .btn-arrow-dark {
+  justify-self: end;
+}
+
+.advent-card.green-baner.purple,
+.price-focus,
+.final-cta,
+.trial-cta,
+.audience-intro,
+.included-summary-card {
+  background:
+    linear-gradient(135deg, rgba(76, 11, 49, 1), rgba(61, 8, 38, 1));
+}
+
+.advent-card.green-baner.purple {
+  border-radius: 24px;
+  box-shadow: var(--pe-shadow);
+}
+
+.teacher-proof-strip {
+  gap: 10px;
+}
+
+.teacher-proof-card {
+  border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(34, 25, 19, .08);
+}
+
+.year-roadmap,
+.included-package,
+.price-focus-form,
+.final-cta-form,
+.final-cta,
+.price-focus {
+  border-radius: 24px;
+}
+
+.year-roadmap,
+.included-package {
+  border: 1px solid var(--pe-line);
+  box-shadow: var(--pe-shadow);
+}
+
+.year-roadmap-track {
+  gap: 12px;
+}
+
+.year-roadmap-content,
+.audience-card,
+.included-receipt,
+.price-focus-points div,
+.included-summary-note {
+  border-radius: 14px;
+}
+
+.audience-card {
+  border-color: var(--pe-line);
+  box-shadow: 0 12px 28px rgba(43, 30, 25, .07);
+}
+
+.included-receipt-row h3,
+.audience-card h3,
+.price-focus-points h3 {
+  letter-spacing: 0;
+}
+
+.price-badge {
+  background: rgba(255, 255, 255, .12);
+}
+
+.review-slider.slick-slider .slick-list {
+  overflow: hidden;
+}
+
+.slide-review {
+  border: 1px solid var(--pe-line);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(43, 30, 25, .07);
+}
+
+.desktop-fixed-bottom-button,
+.mob-fixed-bottom-button {
+  background: var(--pe-green);
+  border-color: #fff;
+  filter: drop-shadow(0 8px 22px rgba(20, 197, 120, .28));
+}
+
+.footer-lessons.mathematics {
+  border-radius: 28px 28px 0 0;
+}
+
+@media screen and (min-width: 1181px) {
+  #teacher .benefits-info-grid,
+  #teacher .home-advantages-grid {
+    gap: 14px;
+  }
+
+  .price-focus-points {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  #methodology .home-advantages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #methodology .advantage-im {
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  .wrapper,
+  .navbar-wrapper {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .container-50px {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .promotion_box {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .promotion-txt._11px {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 18px;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple::before {
+    right: -14%;
+    top: 20%;
+    font-size: 58px;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .h1-express {
+    font-size: 31px;
+    line-height: 1.02;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .benefit-item-box {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .vstup-26-form {
+    border-radius: 20px;
+  }
+
+  .form-note-wrapp {
+    margin-top: 12px;
+  }
+
+  .checkbox-text,
+  .checkbox-field {
+    align-items: flex-start;
+    gap: 9px;
+    padding-left: 0;
+  }
+
+  .form-note-wrapp {
+    justify-content: center;
+    display: flex;
+  }
+
+  .checkbox-text,
+  .checkbox-field {
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .checkbox-text .checkbox,
+  .checkbox-field .checkbox {
+    width: 22px;
+    height: 22px;
+    margin-top: 0;
+  }
+
+  .checkbox-label,
+  .checkbox-label .p-12px,
+  .checkbox-label .p-12px.light,
+  .checkbox-label .p-12px.dark {
+    font-size: 11px !important;
+    line-height: 1.28 !important;
+  }
+
+  #methodology .home-advantages-grid {
+    display: flex;
+    gap: 12px;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+
+  #methodology .advantage-im-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  #methodology .advent-card.green-baner.purple {
+    display: flex;
+    min-height: 0;
+    padding: 20px 16px;
+  }
+
+  #methodology .advent-card.green-baner.purple .namu-1960-24px.white.center {
+    font-size: 20px;
+    line-height: 1.14;
+    text-align: center;
+  }
+
+  #methodology .advent-card.green-baner.purple ._1990-16px.white.center {
+    text-align: center;
+  }
+
+  #methodology .advent-card.green-baner.purple .btn-arrow-dark {
+    justify-self: auto;
+    width: 100%;
+  }
+
+  #methodology .advantage-im {
+    height: 190px;
+  }
+
+  #methodology .advantage-im img {
+    object-position: center top;
+  }
+
+  #methodology .article-text-box {
+    padding: 16px;
+  }
+
+  #methodology .adv-title {
+    font-size: 20px;
+  }
+
+  .advent-card.green-baner.purple,
+  .year-roadmap,
+  .included-package,
+  .price-focus,
+  .final-cta {
+    border-radius: 20px;
+  }
+
+  .year-roadmap,
+  .included-package {
+    padding: 20px 14px;
+  }
+
+  .teacher-proof-strip {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+
+  #teacher .info-section {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden;
+  }
+
+  #teacher .about-image-box.none-radius,
+  #teacher .ukr-lit-text-gap-20.space,
+  #teacher .gap-16,
+  #teacher .advantage-item-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #teacher .advantage-item,
+  #teacher .advantage-item.last {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-items: flex-start;
+  }
+
+  #teacher .advantage-item ._1990-18px,
+  #teacher ._1990-18px.m-16px {
+    overflow-wrap: anywhere;
+  }
+
+  .teacher-proof-card {
+    flex: 0 0 150px;
+    scroll-snap-align: start;
+  }
+
+  .price-focus-points,
+  .audience-grid {
+    gap: 10px;
+  }
+
+  .price-focus,
+  .final-cta {
+    padding: 22px 14px;
+  }
+
+  .review-slider {
+    margin-top: 24px;
+  }
+
+  .slide-review {
+    width: 300px;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 16px;
+  }
+
+  .mob-fixed-bottom-button {
+    width: 56px;
+    height: 56px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  #methodology .advantage-im-card {
+    flex-basis: 86%;
+  }
+
+  .price-badge {
+    align-items: center;
+  }
+}
