@@ -1550,3 +1550,98 @@ body.persona-lightbox-open {
     display: none;
   }
 }
+
+@media screen and (min-width: 1190px) {
+  #methodology .persona-methodology-grid {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #methodology .persona-methodology-grid .advantage-im-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+  }
+
+  #methodology .persona-methodology-grid .advantage-im {
+    height: 180px;
+  }
+
+  #methodology .persona-methodology-grid .article-text-box {
+    padding: 20px 22px 24px;
+  }
+
+  #methodology .persona-methodology-grid .adv-title {
+    font-size: 26px;
+    line-height: 1.08;
+  }
+
+  #methodology .persona-methodology-grid ._1990-18px {
+    max-width: 95%;
+    font-size: 17px;
+    line-height: 1.38;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-benefits {
+    grid-row-gap: 8px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-desktop-benefit {
+    display: flex !important;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-benefits .benefit-item {
+    align-items: center;
+    min-height: 0 !important;
+    padding: 10px 62px 10px 12px !important;
+    border-radius: 14px;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-point-index {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-benefits .benefit-text {
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  #methodology .persona-methodology-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    max-width: 100%;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  #methodology .persona-methodology-grid .advantage-im-card {
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #methodology .persona-methodology-grid .advantage-im {
+    height: 158px;
+  }
+
+  #methodology .persona-methodology-grid .article-text-box {
+    padding: 16px 18px 18px;
+  }
+
+  #methodology .persona-methodology-grid .adv-title {
+    font-size: 22px;
+    line-height: 1.08;
+  }
+}
