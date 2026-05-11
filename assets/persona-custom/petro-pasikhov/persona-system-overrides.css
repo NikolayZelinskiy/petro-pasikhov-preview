@@ -60,15 +60,16 @@ body {
 }
 
 .brand {
-  width: 150px;
+  width: 168px;
+  min-width: 168px;
 }
 
 .navmenu-list.second.mat {
-  gap: 22px;
+  gap: 18px;
 }
 
 .navlink-list-box {
-  gap: 10px;
+  gap: 6px;
 }
 
 .navlink-large {
@@ -77,8 +78,8 @@ body {
   font-weight: 700;
   font-size: 15px;
   line-height: 1.12;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .navlink-large:hover,
@@ -102,16 +103,16 @@ body {
 }
 
 .cta-desktop-wrapp {
-  gap: 24px;
+  gap: 28px;
   flex: 0 0 auto;
-  margin-left: 24px;
+  margin-left: 28px;
 }
 
 .navlink.phone {
   white-space: nowrap;
   font-size: 15px;
   line-height: 1.12;
-  margin-left: 12px;
+  margin-left: 0;
 }
 
 .navbar-button-secondary {
