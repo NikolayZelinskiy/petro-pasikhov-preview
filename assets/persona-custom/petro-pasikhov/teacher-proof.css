@@ -189,6 +189,78 @@ body.persona-lightbox-open {
   overflow: hidden;
 }
 
+.hero-copy-mobile {
+  display: none;
+}
+
+.hero-form-subtitle {
+  color: rgba(48, 38, 30, .72);
+  margin-top: 12px;
+  font-family: "Namu 1990", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.38;
+}
+
+.hero-messenger-button {
+  color: #17c878;
+  text-align: center;
+  background: rgba(23, 200, 120, .1);
+  border: 1px solid rgba(23, 200, 120, .32);
+  border-radius: 999px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px 20px;
+  font-family: "Namu 1960", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+  display: block;
+}
+
+.hero-messenger-button:hover {
+  color: #fff;
+  background: #17c878;
+  border-color: #17c878;
+}
+
+.hero-point-index {
+  color: #17c878;
+  background: rgba(23, 200, 120, .12);
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+}
+
+#methodology .persona-methodology-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#methodology .persona-methodology-grid .advantage-im-card {
+  min-width: 0;
+}
+
+#methodology .persona-methodology-grid ._1990-18px span {
+  background: none;
+  box-shadow: none;
+}
+
+#methodology .advent-card.green-baner.purple .btn-arrow-dark {
+  padding-right: 30px;
+}
+
+#methodology .advent-card.green-baner.purple .icon-46px {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .persona-diploma-lightbox {
     padding: 18px 12px;
@@ -220,6 +292,60 @@ body.persona-lightbox-open {
 
   .persona-diploma-lightbox__next {
     right: 8px;
+  }
+
+  .hero-copy-desktop {
+    display: none;
+  }
+
+  .hero-copy-mobile {
+    display: inline;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-text-info-box {
+    display: contents;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .location-lable-box {
+    order: 1;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .h1-express {
+    order: 2;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .is-520px {
+    order: 3;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .vstup-26-form {
+    order: 4;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .benefit-item-box {
+    order: 5;
+  }
+
+  .hero-home-page.vstup26.fix-height.exp-purple .hero-desktop-benefit {
+    display: none;
+  }
+
+  .hero-form-subtitle {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .hero-messenger-button {
+    min-height: 52px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 15px;
   }
 }
 
@@ -1416,5 +1542,11 @@ body.persona-lightbox-open {
 
   .final-cta {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-home-page.vstup26.fix-height.exp-purple .location-lable-box {
+    display: none;
   }
 }
