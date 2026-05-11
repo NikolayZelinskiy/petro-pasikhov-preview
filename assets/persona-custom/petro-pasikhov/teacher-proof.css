@@ -11,7 +11,59 @@
   border: 1px solid rgba(48, 38, 30, .14);
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+  cursor: zoom-in;
   box-shadow: 0 8px 18px rgba(34, 25, 19, .08);
+}
+
+.teacher-proof-card::before,
+.teacher-proof-card::after {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+  position: absolute;
+}
+
+.teacher-proof-card::before {
+  content: "";
+  z-index: 1;
+  inset: 0;
+  background: rgba(24, 18, 15, .34);
+}
+
+.teacher-proof-card::after {
+  content: "";
+  z-index: 2;
+  background-color: rgba(23, 200, 120, .94);
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='7' stroke='white' stroke-width='3'/%3E%3Cpath d='M17.5 17.5L24 24' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%) scale(.92);
+  box-shadow: 0 10px 24px rgba(20, 197, 120, .34);
+}
+
+.teacher-proof-card:hover::before,
+.teacher-proof-card:hover::after,
+.teacher-proof-card:focus-visible::before,
+.teacher-proof-card:focus-visible::after {
+  opacity: 1;
+}
+
+.teacher-proof-card:hover::after,
+.teacher-proof-card:focus-visible::after {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .teacher-proof-card img {
@@ -23,11 +75,152 @@
 
 .teacher-proof-card span {
   color: #45372f;
+  background: #fff;
   padding: 8px;
   font-size: 12px;
   font-weight: 600;
   line-height: 1.25;
   display: block;
+  position: relative;
+  z-index: 3;
+}
+
+.persona-diploma-lightbox {
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(16, 10, 12, .88);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  transition: opacity .2s ease;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.persona-diploma-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.persona-diploma-lightbox__frame {
+  grid-row-gap: 14px;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(1080px, 92vw);
+  display: flex;
+  position: relative;
+}
+
+.persona-diploma-lightbox__image {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .4);
+}
+
+.persona-diploma-lightbox__caption {
+  color: #fff;
+  text-align: center;
+  font-family: "Namu 1990", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.persona-diploma-lightbox__counter {
+  color: rgba(255, 255, 255, .72);
+  margin-top: 4px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.persona-diploma-lightbox__button {
+  color: #fff;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .26);
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 26px;
+  line-height: 1;
+  transition: background .18s ease, transform .18s ease;
+  display: flex;
+  position: absolute;
+}
+
+.persona-diploma-lightbox__button:hover {
+  background: rgba(23, 200, 120, .92);
+  transform: translateY(-1px);
+}
+
+.persona-diploma-lightbox__close {
+  top: -18px;
+  right: -18px;
+}
+
+.persona-diploma-lightbox__prev,
+.persona-diploma-lightbox__next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.persona-diploma-lightbox__prev:hover,
+.persona-diploma-lightbox__next:hover {
+  transform: translateY(-50%);
+}
+
+.persona-diploma-lightbox__prev {
+  left: -70px;
+}
+
+.persona-diploma-lightbox__next {
+  right: -70px;
+}
+
+body.persona-lightbox-open {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .persona-diploma-lightbox {
+    padding: 18px 12px;
+  }
+
+  .persona-diploma-lightbox__frame {
+    max-width: 100%;
+  }
+
+  .persona-diploma-lightbox__image {
+    max-height: 72vh;
+    border-radius: 10px;
+  }
+
+  .persona-diploma-lightbox__button {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+  }
+
+  .persona-diploma-lightbox__close {
+    top: 8px;
+    right: 8px;
+  }
+
+  .persona-diploma-lightbox__prev {
+    left: 8px;
+  }
+
+  .persona-diploma-lightbox__next {
+    right: 8px;
+  }
 }
 
 #teacher .benefits-icon {
