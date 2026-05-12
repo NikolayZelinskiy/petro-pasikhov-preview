@@ -1420,7 +1420,7 @@ body.persona-lightbox-open {
   .trial-cta-person {
     justify-self: center;
     width: 76%;
-    max-height: 260px;
+    max-height: 220px;
     margin-top: -4px;
   }
 
@@ -2644,3 +2644,31 @@ body.persona-lightbox-open {
   #final-cta .location-lable-box.transparent.light {
     grid-template-columns: 1fr;
     gap: 8px;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 18px;
+    padding: 8px;
+    max-width: 100%;
+  }
+
+  #final-cta .date-label.green,
+  #final-cta .location-label.white.small {
+    align-self: stretch;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 48px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  #final-cta .location-label.white.small {
+    background: rgba(255, 255, 255, .08);
+  }
+
+  #final-cta .date-label.green {
+    display: flex;
+    align-items: center;
+  }
+}
