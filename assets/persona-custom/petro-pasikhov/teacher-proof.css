@@ -2672,3 +2672,103 @@ body.persona-lightbox-open {
     align-items: center;
   }
 }
+
+@media screen and (max-width: 767px) {
+  #trial-lesson .trial-cta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    border-radius: 26px;
+    padding: 18px !important;
+    background:
+      radial-gradient(circle at 88% 12%, rgba(23, 200, 120, .18), transparent 34%),
+      linear-gradient(145deg, #4c0b31 0%, #3d0826 100%);
+  }
+
+  #trial-lesson .trial-cta-proof {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    text-align: left;
+    background: rgba(255, 255, 255, .09);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 18px;
+    max-width: none;
+    margin: 0;
+    padding: 12px 14px;
+  }
+
+  #trial-lesson .trial-cta-proof-number {
+    font-size: 40px;
+    line-height: .9;
+  }
+
+  #trial-lesson .trial-cta-proof-text {
+    max-width: none;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  #trial-lesson .trial-cta-content {
+    text-align: left;
+    justify-self: stretch;
+    padding-bottom: 0;
+  }
+
+  #trial-lesson .trial-cta-content h2 {
+    max-width: 320px;
+    margin-bottom: 12px;
+    font-size: 31px;
+    line-height: 1.04;
+  }
+
+  #trial-lesson .trial-cta-content p {
+    max-width: 315px;
+    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.38;
+  }
+
+  #trial-lesson .trial-cta-button {
+    min-height: 58px;
+    padding: 7px 7px 7px 18px;
+    box-shadow: 0 16px 34px rgba(23, 200, 120, .24);
+  }
+
+  #trial-lesson .trial-cta-arrow {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+  }
+
+  #trial-lesson .trial-cta-person {
+    justify-self: start;
+    width: 172px;
+    height: 150px;
+    max-height: 160px;
+    margin-top: -2px;
+    margin-left: 0;
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: .96;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .22);
+  }
+
+}
+
+.vstup-26-form .hero-messenger-button:not(.price-messenger-button):not(.final-messenger-button) {
+  color: #17c878;
+  background: rgba(23, 200, 120, .1);
+  border-color: rgba(23, 200, 120, .32);
+  box-shadow: none;
+}
+
+.vstup-26-form .hero-messenger-button:not(.price-messenger-button):not(.final-messenger-button):hover {
+  color: #fff;
+  background: #17c878;
+  border-color: #17c878;
+  box-shadow: 0 14px 30px rgba(23, 200, 120, .18);
+}
